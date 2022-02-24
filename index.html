@@ -1,0 +1,68 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .bar1{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+    .bar2{
+        display: flex;
+        justify-content: space-between;
+    }
+
+</style>
+<a href="{% url 'main:get-stock-form' %}">Stock Form</a>
+<a href="{% url 'main:get-file-form' %}">File Form</a>
+
+<nav>
+
+  <div class="container navbar">
+
+      <ul>
+        <li><a href="{% url 'main:get-stock-form' %}">Stock Form</a></li>
+      </ul>
+
+  <ul>
+    <li><a href="{% url 'main:get-file-form' %}">Upload File</a></li>
+  </ul>
+
+  </div>
+</nav>
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="container bar1">
+        <div class="col-sm-6">
+        <canvas id="BarChart" style="width: 200px; height: 200px"></canvas>
+        </div>
+
+        <div class="col-sm-6">
+        <canvas id="RadarChart" width="400" height="400"></canvas>
+        </div>
+        </div>
+
+        <div class="container bar2">
+        <div class="col-sm-6">
+        <canvas id="PolarAreaChart" width="400" height="400"></canvas>
+        </div>
+
+        <div class="col-sm-6">
+        <canvas id="LineChart" width="400" height="400"></canvas>
+        </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}
+
+
+
