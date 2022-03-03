@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .yasg import urlpatterns as docs_urls 
 
 app_name = 'main'
 
@@ -19,7 +20,7 @@ urlpatterns = [
 
 ]
 
-
+urlpatterns += docs_urls 
 
 
 
